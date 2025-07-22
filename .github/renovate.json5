@@ -93,7 +93,8 @@
       "dependencyDashboardApproval": true,
       // This forces each dep to have a unique group, resulting in each major update
       // having its own PR.
-      "groupName": "{{manager}} unstable dependency {{depName}}"
+      "groupName": "{{manager}} unstable dependency {{depName}}",
+      "commitMessageTopic": "{{manager}} unstable dependency {{depName}}"
     },
     {
       "matchManagers": ["helm-values"],
@@ -120,7 +121,8 @@
       "dependencyDashboardApproval": true,
       // This forces each dep to have a unique group, resulting in each major update
       // having its own PR.
-      "groupName": "{{manager}} dependency {{depName}}"
+      "groupName": "{{manager}} dependency {{depName}}",
+      "commitMessageTopic": "{{manager}} dependency {{depName}}"
     }
   ],
 }
