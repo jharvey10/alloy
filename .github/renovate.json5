@@ -62,7 +62,7 @@
       "dependencyDashboardApproval": true
     },
     {
-      // Group and hold unstable deps
+      // Hold unstable deps
       "matchManagers": ["gomod"],
       "matchPackageNames": [
         "github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/collector",
