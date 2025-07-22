@@ -89,8 +89,10 @@
         "k8s.io/component-base",
         "sigs.k8s.io/controller-runtime"
       ],
-      "groupName": "unstable dependencies",
-      "dependencyDashboardApproval": true
+      "dependencyDashboardApproval": true,
+      // This forces each dep to have a unique group, resulting in each major update
+      // having its own PR.
+      "groupName": "{{manager}} unstable dependency {{depName}}"
     },
     {
       "matchManagers": ["helm-values"],
