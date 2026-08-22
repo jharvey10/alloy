@@ -21,7 +21,7 @@ jobs:
       chartpath: ${{ steps.list-changed.outputs.chartpath }}
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           path: source
@@ -90,7 +90,7 @@ jobs:
           repositories: alloy,helm-charts
 
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           path: source
@@ -104,7 +104,7 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Checkout helm-charts
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           repository: grafana/helm-charts
@@ -122,7 +122,7 @@ jobs:
         uses: azure/setup-helm@1a275c3b69536ee54be43f2070a358922e12c8d4 # v4.3.1
         with:
           # renovate: datasource=github-releases packageName=helm/helm
-          version: v3.10.3
+          version: v3.21.4
 
       - name: Parse Chart.yaml
         id: parse-chart
@@ -171,7 +171,7 @@ jobs:
       # The tag name in grafana/helm-charts is <package>-<version>, while the
       # tag name for grafana/alloy is helm-chart/<version>.
       - name: Make github release
-        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
         with:
           name: ${{ steps.parse-chart.outputs.packagename }}
           repository: grafana/helm-charts
